@@ -1,0 +1,235 @@
+<div class="custom-code ordinal-section ordinal-section--spacious section-padding--spacious page-width--1700 color-default">
+<div class="custom-code__wrapper custom-code__wrapper--narrow body-text--duet">
+  
+<div class="price-table-mob">
+
+  {% for block in section.blocks %}
+    
+    <div class="block{% if block.settings.highlight != none %} {{ block.settings.highlight }}{% endif %}">
+      <div>
+        {% if block.settings.icono != blank %}<div class="doodle"><img src="{{ block.settings.icono | image_url }}" alt="{{ block.settings.icono | alt }}" height="92"></div>{% endif %}
+        <h3>{{ block.settings.nombre }}</h3>
+        {{ block.settings.desc }}
+      </div>
+      <div class="foot">
+        <span>{{ block.settings.price }}</span>
+        <a class="btn" href="{{ block.settings.producto.url }}">{% if request.locale.iso_code == 'en' %}Buy{% else %}Comprar{% endif %}</a>
+      </div>
+    </div>
+
+  {% endfor %}
+</div>
+
+
+<table class="price-table">
+<thead>
+<tr>
+<th></th>
+  {% for block in section.blocks %}
+<th scope="col">
+<div class="plan-block{% if block.settings.highlight != none %} {{ block.settings.highlight }}{% endif %}" style="text-align: center;">
+<h3>
+  {% if block.settings.icono != blank %}<img src="{{ block.settings.icono | image_url }}" alt="{{ block.settings.icono | alt }}" height="92" class="doodle">{% endif %}
+  {{ block.settings.nombre }}</h3>
+<div>
+<span>{{ block.settings.price }}</span> <a class="btn" href="{{ block.settings.producto.url }}">{% if request.locale.iso_code == 'en' %}Buy{% else %}Comprar{% endif %}</a>
+</div>
+</div>
+</th>
+    {% endfor %}
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">{{ section.settings.tablaa }}</th>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+</tr>
+<tr>
+<th scope="row">{{ section.settings.tablab }}</th>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">{{ section.settings.tablac }}</th>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">{{ section.settings.tablad }}</th>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th scope="row">{{ section.settings.tablae }}</th>
+<td><img alt="✔" src="https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-check.svg?v=1711062192"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="5"></td>
+</tr>
+</tfoot>
+</table>
+<p style="text-align:center"><i>{{ section.settings.legal }}</i></p>
+
+</div>
+</div>
+
+{% stylesheet %}
+
+body{user-select:none !important;} .publicidadfp {margin: 4em 0;}
+.publicidadfp .price-table-mob {display: flex; flex-direction:column; justify-content:space-between;gap: 1rem;margin-bottom: 2em;} .publicidadfp .price-table-mob ul {padding-left: 0;} .publicidadfp .price-table-mob .block {flex: 0 0 20%;} .publicidadfp .price-table-mob .block {background: rgba(86, 167, 164, 0.4);border-radius: 16px; padding: 1.5rem;position:relative;} .publicidadfp .price-table-mob h3 {font-size: 1.6rem !important; line-height: 1.2 !important; margin-bottom: 1rem; color: rgb(255, 67, 1);font-weight:bold !important;} .publicidadfp .price-table-mob p {font-size: 0.9em !important; line-height: 1.8 !important;} .publicidadfp .price-table-mob span {font-weight: bold; font-size:1.2rem;display:block;} .publicidadfp .price-table-mob li {margin-bottom: .6rem } .publicidadfp .price-table-mob .block {display: flex; flex-direction: column; justify-content: space-between;} .publicidadfp .price-table-mob .block div:nth-child(2) {margin-top: 2rem} .publicidadfp .price-table-mob .btn {display: inline-block !important;margin: 1.5rem auto 0;font-weight:bold;font-size:1.2rem;padding: .5rem 1.5rem !important;} .publicidadfp .price-table-mob .block.bestseller {background: rgb(255, 67, 1);color: #fff;position:relative;} .publicidadfp .price-table-mob .block.bestseller h3 {color: #fff;} .publicidadfp .price-table-mob .doodle {text-align:center;margin-top: 0 !important;transform:scale(.8);} .price-table-mob .foot, .price-table-mob h3 {text-align:center;}
+.publicidadfp .body-text--duet {font-size: 0.9em !important; line-height: 1.8 !important;}  .publicidadfp .redes {display: flex; flex-direction: column; gap:1.5rem; justify-content: space-around; background: rgba(86, 167, 164, 0.4); border-radius: 16px; padding:1.5rem;  font-size:1.2rem;line-height:1.5;} .publicidadfp .redes img {display: inline-block; vertical-align: middle; margin-right: 5px;} .publicidadfp .redes p:first-of-type {margin-bottom:1rem} .publicidadfp ul li {margin-bottom: 2rem;} .publicidadfp ul strong {font-size: 1.2rem !important;} .publicidadfp .price-table, .publicidadfp .price-table * {box-sizing: border-box;} .publicidadfp .price-table {height: 1px;text-align: left;table-layout: fixed; border-collapse: collapse;width: 100%;margin-top:2.5em;margin-bottom: 2em;} .publicidadfp .price-table thead th {width: 20%;vertical-align:bottom;padding: 0 5px;height: 100%;} .publicidadfp .price-table .plan-block {background: rgba(86, 167, 164, 0.4);border-radius: 16px;padding: 2rem 1rem 1rem;display: flex;flex-direction: column;height: 100%;justify-content: space-between;position:relative;} .publicidadfp .price-table .plan-block.bestseller {border: 3px solid rgb(255, 67, 1);background:rgb(255, 67, 1);position:relative;} .publicidadfp .price-table h3 {font-size: 1.4rem !important; line-height: 1.2 !important; margin: 0 0 1rem; color: rgb(255, 67, 1);font-weight:bold !important;} .publicidadfp .price-table .plan-block.bestseller * {color: #fff;} .publicidadfp .price-table tbody tr {border-bottom: 1px solid #ccc;} .publicidadfp .price-table tbody th, .publicidadfp .price-table tbody td {padding: 8px 2px;} .publicidadfp .price-table tfoot {text-align: center;font-size: .9rem; color: #888; font-style: italic;} .publicidadfp .price-table tfoot td {padding-top: 10px;} .publicidadfp .price-table tbody td {text-align: center;} .publicidadfp .price-table tbody tr:first-child > * {padding-top: 1.5rem;}
+.publicidadfp .price-table span {display:block} .publicidadfp .price-table-mob .btn, .publicidadfp .price-table .btn {margin-top:.5em;text-decoration:none;display:block;background:#FC451E;border-radius:8px;color:#fff;padding:3px 5px;text-align:center;} .publicidadfp .price-table .bestseller .btn, .publicidadfp .price-table-mob .bestseller .btn {background:#eee;color:#FC451E;} .publicidadfp .price-table .btn:hover {background:#000;color:#fff;} 
+@media screen and (max-width: 987px) {.publicidadfp .price-table {font-size: .75em;} .publicidadfp .price-table h3 {font-size: 1em !important;} .publicidadfp .price-table {font-size: .85em;width: 100%;}  .publicidadfp .price-table .plan-block {padding: .5rem;} .publicidadfp .price-table h3 {font-size: 1.1em !important;word-wrap: break-word;hyphens: auto;} .doodle {transform:scale(.6);object-fit:contain;} .publicidadfp .price-table .bestseller::before  {transform:scale(.4) !important;right:-5px;} }
+@media screen and (min-width: 50em) {.publicidadfp .redes {flex-direction:row;} .publicidadfp .price-table span {font-size: 1.3em;}  }
+.rte table thead tr, .rte table tbody tr {border-top: none !important;} .rte table thead tr:last-child {border-bottom: none !important;} .price-table .doodle {height:80px;width:auto;margin:0 auto 20px;display:block;} .publicidadfp .price-table .bestseller::before {content:url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-bestseller2.svg?v=1714674862);position:absolute;right:-5px;top:-40px;transform:scale(.6);} .publicidadfp .price-table .smartchoice::before {content:url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-smartchoice.svg?v=1714674884);position:absolute;right:-5px;top:-31px;transform:scale(.6);} 
+
+.publicidadfp .price-table-mob .smartchoice > div:first-child::before {content:url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-smartchoice.svg?v=1714674884);position: absolute;top:-21px;right:0;transform:scale(.6);}
+.publicidadfp .price-table-mob .bestseller > div:first-child::before {content:url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-bestseller2.svg?v=1714674862);position: absolute;top:0;right:0;transform:scale(.6);}
+.publicidadfp .price-table .planblock {position:relative;}
+.publicidadfp .price-table .planblock.smartchoice::before {content:url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-smartchoice.svg?v=1714674884);position: absolute;top:-21px;right:0;transform:scale(.6);}
+
+@media screen and (max-width: 768px) { .price-table {display:none !important;} }
+
+@media screen and (min-width: 768px) {.price-table-mob {display:none !important} }
+
+@media screen and (max-width: 389px) {
+  .product-labels__title {
+    font-size: 16px !important; line-height:1.2 !important;
+  }
+}
+
+#shopify-section-sections--15221667823750__custom_html_nyq7FF {
+  height: 1px !important;
+}
+
+#shopify-section-template--15294802657414__rich_text_fyW8G6 li:first-child::before {
+  content: url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-tiktok_633a9d34-d53f-45ca-b018-c931293af872.svg);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#shopify-section-template--15294802657414__rich_text_fyW8G6 li:nth-child(2)::before {content: url(https://cdn.shopify.com/s/files/1/0563/5899/4054/files/ic-instagram.svg);display: inline-block;vertical-align: middle;margin-right: 5px;}
+  
+{% endstylesheet %}
+
+{% schema %}
+  {
+    "name": "Publicidad FP",
+    "settings": [
+      {
+        "type": "text",
+        "id": "tablaa",
+        "label": "Opción 1 en tabla"
+      },
+      {
+        "type": "text",
+        "id": "tablab",
+        "label": "Opción 2 en tabla"
+      },
+      {
+        "type": "text",
+        "id": "tablac",
+        "label": "Opción 3 en tabla"
+      },
+      {
+        "type": "text",
+        "id": "tablad",
+        "label": "Opción 4 en tabla"
+      },
+      {
+        "type": "text",
+        "id": "tablae",
+        "label": "Opción 5 en tabla"
+      },
+      {
+        "type": "textarea",
+        "id": "legal",
+        "label": "Texto legal bajo tabla"
+      }
+    ],
+    "presets": [{"name": "Publicidad FP"}],
+    "tag": "section",
+    "class": "publicidadfp",
+    "limit": 1,
+    "blocks": [
+      {
+        "name": "Bloque",
+        "type": "title",
+        "settings": [
+          {
+          "type": "text",
+          "id": "nombre",
+          "label": "Nombre"
+          },
+          {
+          "type": "text",
+          "id": "price",
+          "label": "Precio"
+          },
+          {
+          "type": "richtext",
+          "id": "desc",
+          "label": "Descripción"
+          },
+          {
+          "type": "select",
+          "id": "highlight",
+          "label": "Resaltado",
+          "options": [
+            {
+              "value": "none",
+              "label": "Ninguno"
+            },
+            {
+              "value": "bestseller",
+              "label": "Best Seller"
+            },
+            {
+              "value": "smartchoice",
+              "label": "Smart Choice"
+            }
+          ],
+            "default": "none"
+          },
+          {
+            "type": "image_picker",
+            "id": "icono",
+            "label": "Icono"
+          },
+          {
+            "type": "product",
+            "id": "producto",
+            "label": "Producto asociado"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 4,
+    "enabled_on": {
+      "templates": ["page"]
+    },
+    "locales": {
+      "en": {
+        
+      },
+       "es": {
+        
+      }
+    }
+
+  }
+{% endschema %}

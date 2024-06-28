@@ -1,0 +1,100 @@
+<div class="rich-text rich-text--spacious ordinal-section ordinal-section--spacious section-padding--spacious color-custom no-default-color fp-seguidores">
+    <div class="rich-text__wrapper rich-text__wrapper--narrow buttons-zoom center" style="text-align: center;"><div class="content-text content-text--duet  richtext richtext-link--underline">
+        <h2>{{ section.settings.title }}</h2>
+        {{ section.settings.body }}
+
+        <ul class="fp-seguidores-snet">
+        {% for block in section.blocks %}
+        <li>{% if block.settings.sneticon != blank %}<img src="{{ block.settings.sneticon | image_url }}" alt="{{ block.settings.sneticon | alt }}" height="92">{% endif %}<strong>{{ block.settings.snet }}:</strong> {{ block.settings.number }}</li>
+        {% endfor %}
+        </ul>
+    </div></div>
+</div>
+
+{% stylesheet %}
+.fp-seguidores {
+	background: #bddcda;
+	color: #000;
+}
+
+.fp-seguidores .rich-text__wrapper {
+  padding: 4rem 0;
+}
+.fp-seguidores h2 {
+  color: #ff4301;
+  font-weight: bold !important;
+}
+.fp-seguidores .fp-seguidores-snet {
+  list-style: none;
+  display: flex !important;
+  gap: 1em;
+}
+.fp-seguidores .fp-seguidores-snet li {
+  list-style: none;
+}
+.fp-seguidores .fp-seguidores-snet li img {
+	display: inline-block !important; vertical-align: middle; margin-right: 5px; height: 38px; width: auto;padding-bottom: 0 !important;
+}
+@media screen and (max-width: 800px) {
+  .fp-seguidores-snet {
+    flex-direction: column;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+	"name": "FP Seguidores",
+	"settings": [
+	{
+        "type": "text",
+        "id": "title",
+        "label": "Título"
+      },
+      {
+        "type": "richtext",
+        "id": "body",
+        "label": "Cuerpo de texto"
+      }
+	],
+	"presets": [
+		{"name": "Seguidores en redes"}
+	],
+	"limit": 1,
+	"blocks": [
+      {
+        "name": "Red social",
+        "type": "title",
+        "settings": [
+          {
+          "type": "text",
+          "id": "snet",
+          "label": "Nombre"
+          },
+          {
+          "type": "text",
+          "id": "number",
+          "label": "Seguidores"
+          },
+          {
+            "type": "image_picker",
+            "id": "sneticon",
+            "label": "Icono"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 2,
+    "enabled_on": {
+      "templates": ["page"]
+    },
+    "locales": {
+      "en": {
+        
+      },
+       "es": {
+        
+      }
+    }
+}
+{% endschema %}
