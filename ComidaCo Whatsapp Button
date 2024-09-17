@@ -1,0 +1,3 @@
+<div class="product__text">
+<p><a href="https://wa.me/{{ localization.market.metafields.custom.whatsapp_number }}?text={{ product.metafields.custom.whatsapp.value | url_encode }}" target="_blank">{{ product.metafields.custom.whatsapp_btn.value }}</a></p>
+</div>
